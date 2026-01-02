@@ -29,8 +29,23 @@ public class Pattern{
         }
         
     }
+    System.out.println("\n");
+  public static void inverted_haf_pyramid_int(int n)
+      {
+         for(int i=1;i<=n;i++)
+      {
+          for(int j=1;j<=n-i+1;j++)
+              {
+                  System.out.print(j);
+              }
+      }
+        System.out.println();
+}
+          
     public static void main(String[] args) {
         hallow_rectangle(5, 5);
         inverted_haf_pyramid(5);
+        inverted_haf_pyramid_int(5);
     }
+
 }
