@@ -74,15 +74,29 @@ public static void butterfly(int n){
             }
 
         }
+public static void solid_rhombus(int n) { 
+    for(int i=1;i<=n;i++)
+       {
+           for(int j=1;j<=(n-i);j++){
+               System.out.print(" ");
+           }
+           for(int j=1;j<=n;j++){
+               System.out.print("*");
+           }
+           System.out.println();
+
+       }
+}
                 
                 
     public static void main(String[] args) {
         hallow_rectangle(5, 5);
         inverted_haf_pyramid(5);
         inverted_haf_pyramid_int(5);
-         butterfly(4);
-        b
+        butterfly(4);
+        solid_rhombus(5);
     }
 
 }
+
 
