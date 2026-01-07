@@ -106,6 +106,16 @@ public static void hollow_rhombus(int n)
         System.out.println();
     }
 }
+public static void haf_pyramid(int n){
+    for(int i=1;i<=n;i++)
+    { 
+        for(int j=1;j<=i;j++)
+            {
+                System.out.print("*");
+            }
+        System.out.println();
+    }
+}
                 
     public static void main(String[] args) {
         hallow_rectangle(5, 5);
@@ -114,9 +124,11 @@ public static void hollow_rhombus(int n)
         butterfly(4);
         solid_rhombus(5);
         hollow_rhombus(6);
+        haf_pyramid(6);
     }
 
 }
+
 
 
 
