@@ -309,6 +309,40 @@
                 <div class="amount" id="topCategory">N/A</div>
             </div>
         </div>
+        <div class="main-content">
+            <div class="card">
+                <h2>➕ Add Expense</h2>
+                <div>
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select id="category" required>
+                            <option value="">Select Category</option>
+                            <option value="FOOD">Food</option>
+                            <option value="TRAVEL">Travel</option>
+                            <option value="BILLS">Bills</option>
+                            <option value="ENTERTAINMENT">Entertainment</option>
+                            <option value="LOGISTICS">Logistics</option>
+                            <option value="OTHER">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Amount (Rs.)</label>
+                        <input type="number" id="amount" step="0.01" min="0.01" placeholder="0.00" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea id="description" rows="3" placeholder="What did you spend on?" required></textarea>
+                    </div>
+                    <button onclick="addExpense()" id="addBtn">Add Expense</button>
+                </div>
 
-        #java program for backend
+                <div class="category-breakdown">
+                    <h3 style="margin-bottom: 15px;">Category Breakdown</h3>
+                    <div id="categoryChart"></div>
+                </div>
+
+                <div class="export-section">
+                    <button onclick="exportToCSV()" style="background: #27ae60;">📥 Export to CSV</button>
+                </div>
+            </div>
         
