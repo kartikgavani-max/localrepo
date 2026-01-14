@@ -345,4 +345,28 @@
                     <button onclick="exportToCSV()" style="background: #27ae60;">📥 Export to CSV</button>
                 </div>
             </div>
+
+
+             <div class="card">
+                <h2>📊 Expense History</h2>
+                <div class="filter-section">
+                    <select id="filterMonth" onchange="displayExpenses()">
+                        <option value="">All Months</option>
+                    </select>
+                    <select id="filterCategory" onchange="displayExpenses()">
+                        <option value="">All Categories</option>
+                        <option value="FOOD">Food</option>
+                        <option value="TRAVEL">Travel</option>
+                        <option value="BILLS">Bills</option>
+                        <option value="ENTERTAINMENT">Entertainment</option>
+                        <option value="LOGISTICS">Logistics</option>
+                        <option value="OTHER">Other</option>
+                    </select>
+                </div>
+                <div class="expense-list" id="expenseList">
+                    <div class="loading">Loading expenses...</div>
+                </div>
+            </div>
+        </div>
+    </div>
         
