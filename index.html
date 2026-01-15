@@ -369,4 +369,17 @@
             </div>
         </div>
     </div>
+     <script>
+        const API_URL = 'http://localhost:8080/api/expenses';
+        let expenses = [];
+        let isConnected = false;
+
+    
+        window.onload = async function() {
+            await checkConnection();
+            await loadExpenses();
+            updateDashboard();
+            updateCategoryChart();
+            populateMonthFilter();
+        };
         
