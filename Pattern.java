@@ -116,6 +116,27 @@ public static void haf_pyramid(int n){
         System.out.println();
     }
 }
+
+//dimond pattern
+public static void diamond(int n){
+    for(int i=1;i<=n;i++){
+    for(int j=1;j<=(n-i);j++){
+        System.out.print(" ");
+    }
+    for(int j=1;j<=(2*i)-1;j++){
+        System.out.print("*");
+    }
+    System.out.println();
+}
+ for(int i=n;i>=1;i--){
+    for(int j=1;j<=(n-i);j++){
+        System.out.print(" ");
+    }
+    for(int j=1;j<=(2*i)-1;j++){
+        System.out.print("*");
+    }
+    System.out.println();
+}
                 
     public static void main(String[] args) {
         hallow_rectangle(5, 5);
@@ -125,9 +146,11 @@ public static void haf_pyramid(int n){
         solid_rhombus(5);
         hollow_rhombus(6);
         haf_pyramid(6);
+        diamond(4);
     }
 
 }
+
 
 
 
