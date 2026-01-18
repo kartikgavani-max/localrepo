@@ -392,5 +392,15 @@
                 updateConnectionStatus();
             }
         }
-         
+
+          function updateConnectionStatus() {
+            const status = document.getElementById('connectionStatus');
+            if (isConnected) {
+                status.textContent = '✓ Connected to Backend';
+                status.className = 'connection-status connected';
+            } else {
+                status.textContent = '✗ Backend Offline (Using Local Storage)';
+                status.className = 'connection-status disconnected';
+            }
+        }
         
