@@ -403,4 +403,20 @@
                 status.className = 'connection-status disconnected';
             }
         }
-        
+         async function loadExpenses() {
+            try {
+                if (isConnected) {
+                    const response = await fetch(API_URL);
+                    expenses = await response.json();
+                    
+                    localStorage.setItem('expenses', JSON.stringify(expenses));
+                } else {
+                    expenses = JSON.parse(localStorage.getItem('expenses')) || [];
+                }
+                displayExpenses();
+            } catch (error) {
+                console.error('Error loading expenses:', error);
+                expenses = JSON.parse(localStorage.getItem('expenses')) || [];
+                displayExpenses();
+            }
+        }
