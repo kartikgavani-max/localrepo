@@ -420,8 +420,17 @@
                 displayExpenses();
             }
         }
-async function addExpense() {
+      async function addExpense() {
             const category = document.getElementById('category').value;
             const amount = parseFloat(document.getElementById('amount').value);
             const description = document.getElementById('description').value;
     
+      if (!category || !amount || !description) {
+                alert('Please fill in all fields!');
+                return;
+            }
+            
+            if (amount <= 0) {
+                alert('Amount must be positive!');
+                return;
+            }
