@@ -444,3 +444,24 @@
           const addBtn = document.getElementById('addBtn');
             addBtn.disabled = true;
             addBtn.textContent = 'Adding...';
+         try {
+                if (isConnected) {
+                    const response = await fetch(API_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(expense)
+                    });
+                    
+                    if (response.ok) {
+                        await loadExpenses();
+                        alert('✓ Expense added successfully!');
+                    } else {
+                        throw new Error('Failed to add expense');
+                    }
+                } else {
+        
+                    expenses.push(expense);
+                    localStorage.setItem('expenses', JSON.stringify(expenses));
+                    displayExpenses();
+                    alert('✓ Expense added to local storage!');
+                }
