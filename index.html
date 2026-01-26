@@ -468,3 +468,16 @@
                 document.getElementById('category').value = '';
                 document.getElementById('amount').value = '';
                 document.getElementById('description').value = '';
+
+                updateDashboard();
+                updateCategoryChart();
+                populateMonthFilter();
+            } catch (error) {
+                console.error('Error adding expense:', error);
+                alert('✗ Failed to add expense. Please try again.');
+            } finally {
+                addBtn.disabled = false;
+                addBtn.textContent = 'Add Expense';
+            }
+        }
+         
