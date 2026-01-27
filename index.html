@@ -480,4 +480,9 @@
                 addBtn.textContent = 'Add Expense';
             }
         }
-         
+          function displayExpenses() {
+            const list = document.getElementById('expenseList');
+            const filterMonth = document.getElementById('filterMonth').value;
+            const filterCategory = document.getElementById('filterCategory').value;
+            
+            let filtered = [...expenses];
