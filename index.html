@@ -486,3 +486,16 @@
             const filterCategory = document.getElementById('filterCategory').value;
             
             let filtered = [...expenses];
+
+          if (filterMonth) {
+                filtered = filtered.filter(e => e.date.substring(0, 7) === filterMonth);
+            }
+            
+            if (filterCategory) {
+                filtered = filtered.filter(e => e.category === filterCategory);
+            }
+            
+            if (filtered.length === 0) {
+                list.innerHTML = '<p style="text-align: center; color: #999; padding: 40px;">No expenses found.</p>';
+                return;
+            }
