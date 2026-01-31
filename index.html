@@ -499,3 +499,18 @@
                 list.innerHTML = '<p style="text-align: center; color: #999; padding: 40px;">No expenses found.</p>';
                 return;
             }
+ list.innerHTML = filtered.sort((a, b) => new Date(b.date) - new Date(a.date))
+                .map(exp => `
+                    <div class="expense-item">
+                        <div class="expense-info">
+                            <span class="expense-category category-${exp.category.toLowerCase()}">${exp.category}</span>
+                            <div style="margin-top: 5px;">${exp.description}</div>
+                            <div class="expense-date">${new Date(exp.date).toLocaleDateString()}</div>
+                        </div>
+                        <div style="text-align: right;">
+                            <div class="expense-amount">$${exp.amount.toFixed(2)}</div>
+                            <button class="delete-btn" onclick="deleteExpense('${exp.id}')">Delete</button>
+                        </div>
+                    </div>
+                `).join('');
+        }
